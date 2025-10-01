@@ -34,10 +34,10 @@
   display: inline-block;
   width: 1ch;
   text-align: center;
-  cursor: pointer;
+  cursor: default;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .tableHeader {
     tr {
       th:first-child {

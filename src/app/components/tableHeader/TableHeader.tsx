@@ -44,7 +44,7 @@ export default function TableHeader({
     <thead className={styles.tableHeader}>
       <tr>
         {columns.map((column) => (
-          <th key={column}>
+          <th key={column} title={colNames[column]}>
             <p>
               <span
                 className={styles.arrow}

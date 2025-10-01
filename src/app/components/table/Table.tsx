@@ -27,7 +27,6 @@ export default function Table() {
       setWinData([]);
       setScoreData(generateScoreChances(length));
     }
-    console.log(length);
   }, [table, length]);
 
   function handleSorting(
