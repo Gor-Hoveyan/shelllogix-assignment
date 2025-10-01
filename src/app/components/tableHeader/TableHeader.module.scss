@@ -1,0 +1,27 @@
+.tableHeader {
+  th,
+  td {
+    padding: 16px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  tr {
+    th:first-child {
+      max-width: 60%;
+    }
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  cursor: pointer;
+}
