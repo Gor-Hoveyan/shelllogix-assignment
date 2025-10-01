@@ -21,13 +21,31 @@
     border-bottom-right-radius: 10px;
   }
   td:first-child {
+    width: 60%;
+
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
 }
 
-.bodyRow {
-  td:first-child {
-    width: 60%;
+#loadMoreRow {
+  td {
+    &:hover {
+      color: white;
+      background: none;
+    }
+    vertical-align: middle;
+    text-align: center;
+    min-width: 100%;
+  }
+  button {
+    margin: 0 auto;
+    background: #b7ecba;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }

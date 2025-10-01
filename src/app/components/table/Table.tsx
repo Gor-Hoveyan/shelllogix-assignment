@@ -15,7 +15,7 @@ export default function Table() {
   const [table, setTable] = useState<"Win Chances" | "Score Chances">(
     "Win Chances"
   );
-  const [length, setLength] = useState<number>(1000);
+  const [length, setLength] = useState<number>(45);
   const [winData, setWinData] = useState<WinChanceRow[]>([]);
   const [scoreData, setScoreData] = useState<ScoreChanceRow[]>([]);
   useEffect(() => {

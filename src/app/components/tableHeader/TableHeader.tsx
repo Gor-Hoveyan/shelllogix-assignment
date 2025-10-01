@@ -30,7 +30,7 @@ export default function TableHeader({
   isScore,
 }: TableHeaderInterface) {
   const [ordered, setOrdered] = useState<ColumnKey | undefined>(undefined);
-  const [order, setOrder] = useState<"asc" | "des">("des");
+  const [order, setOrder] = useState<"asc" | "des">("asc");
 
   const handleClick = (column: ColumnKey) => {
     const newOrder = ordered === column && order === "asc" ? "des" : "asc";
@@ -51,7 +51,6 @@ export default function TableHeader({
                 onClick={() => handleClick(column)}
               >
                 {colNames[column]}
-
                 {ordered === column ? (order === "asc" ? "▲" : "▼") : " "}
               </span>
             </p>
