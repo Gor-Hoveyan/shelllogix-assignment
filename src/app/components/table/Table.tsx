@@ -13,7 +13,7 @@ type ColumnType = "2:0" | "2:1" | "0:2" | "1:2" | "bookmaker" | "p1" | "p2";
 
 export default function Table() {
   const [table, setTable] = useState<"Win Chances" | "Score Chances">(
-    "Win Chances"
+    "Score Chances"
   );
   const [length, setLength] = useState<number>(45);
   const [winData, setWinData] = useState<WinChanceRow[]>([]);

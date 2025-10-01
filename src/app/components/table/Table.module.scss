@@ -21,6 +21,15 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   th:first-child {
-    width: 60%;
+    border-top-left-radius: 15px;
+  }
+  th:last-child {
+    border-top-right-radius: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tableWrapper {
+    max-width: 100%;
   }
 }

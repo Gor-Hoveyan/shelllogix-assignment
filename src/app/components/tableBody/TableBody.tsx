@@ -15,7 +15,9 @@ export default function TableBody(props: TableBodyInterface) {
       {data.slice(0, rows * 20).map((row) => (
         <tr key={row.id} className={styles.bodyRow}>
           {(Object.keys(row) as Array<keyof typeof row>).slice(1).map((key) => (
-            <td key={row.id + key}>{row[key]}</td>
+            <td key={row.id + key} className={styles.tooltip}>
+              {row[key]}
+            </td>
           ))}
         </tr>
       ))}

@@ -1,4 +1,5 @@
 .tableHeader {
+  background: #2d3748;
   th,
   td {
     padding: 16px 8px;
@@ -9,13 +10,19 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   tr {
     th:first-child {
-      max-width: 60%;
+      width: 60%;
     }
   }
   p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    span {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
   }
 
   th {
@@ -28,4 +35,14 @@
   width: 1ch;
   text-align: center;
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .tableHeader {
+    tr {
+      th:first-child {
+        width: max-content;
+      }
+    }
+  }
 }
