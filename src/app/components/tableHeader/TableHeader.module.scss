@@ -17,6 +17,10 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  th {
+    position: sticky;
+  }
 }
 
 .arrow {
