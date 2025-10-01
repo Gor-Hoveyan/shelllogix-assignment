@@ -28,10 +28,14 @@ export default function TableBody(props: TableBodyInterface) {
                 }
               >
                 {row[key]}
-                {key === "2:0" || key === "0:2" || key === "p1" ? (
+                {(key as string) === "2:0" ||
+                (key as string) === "0:2" ||
+                (key as string) === "p1" ? (
                   <ArrowUp />
                 ) : null}
-                {key === "2:1" || key === "1:2" || key === "p2" ? (
+                {(key as string) === "2:1" ||
+                (key as string) === "1:2" ||
+                (key as string) === "p2" ? (
                   <ArrowDown />
                 ) : null}
               </span>
