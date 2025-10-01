@@ -1,9 +1,13 @@
 .tableBody {
   tr,
   td {
-    padding: 16px 8px;
     font-size: 1.1em;
     border: none;
+  }
+  td,
+  span,
+  tr {
+    padding: 16px 8px;
   }
   tr {
     td {
@@ -51,7 +55,12 @@
   }
 }
 
-.tooltipText {
-  position: relative;
-  top: 100;
+.highest {
+  color: black;
+  background-color: #b7ecba;
+  border-radius: 15px;
+  text-align: left;
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }

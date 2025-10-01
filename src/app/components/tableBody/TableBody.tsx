@@ -2,6 +2,8 @@
 import { ScoreChanceRow, WinChanceRow } from "@/src/utils/generateData";
 import styles from "./TableBody.module.scss";
 import { useState } from "react";
+import ArrowUp from "../../icons/ArrowUp";
+import ArrowDown from "../../icons/ArrowDown";
 
 interface TableBodyInterface {
   data: ScoreChanceRow[] | WinChanceRow[];
@@ -16,7 +18,23 @@ export default function TableBody(props: TableBodyInterface) {
         <tr key={row.id} className={styles.bodyRow}>
           {(Object.keys(row) as Array<keyof typeof row>).slice(1).map((key) => (
             <td key={row.id + key} title={row[key] as string}>
-              {row[key]}
+              <span
+                className={
+                  typeof row[key] === "number" &&
+                  Math.max(...data.map((row) => row[key] as number)) ===
+                    row[key]
+                    ? styles.highest
+                    : ""
+                }
+              >
+                {row[key]}
+                {key === "2:0" || key === "0:2" || key === "p1" ? (
+                  <ArrowUp />
+                ) : null}
+                {key === "2:1" || key === "1:2" || key === "p2" ? (
+                  <ArrowDown />
+                ) : null}
+              </span>
             </td>
           ))}
         </tr>

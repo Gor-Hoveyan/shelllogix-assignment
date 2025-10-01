@@ -10,7 +10,14 @@ import { useEffect, useState } from "react";
 import { ScoreChanceRow, WinChanceRow } from "@/src/utils/generateData";
 import ControlPanel from "../controlPanel/ControlPanel";
 
-type ColumnType = "2:0" | "2:1" | "0:2" | "1:2" | "bookmaker" | "p1" | "p2";
+export type ColumnType =
+  | "2:0"
+  | "2:1"
+  | "0:2"
+  | "1:2"
+  | "bookmaker"
+  | "p1"
+  | "p2";
 
 export default function Table() {
   const [table, setTable] = useState<"Win Chances" | "Score Chances">(
