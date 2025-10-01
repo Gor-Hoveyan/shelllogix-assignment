@@ -8,6 +8,7 @@ import {
 } from "@/src/utils/generateData";
 import { useEffect, useState } from "react";
 import { ScoreChanceRow, WinChanceRow } from "@/src/utils/generateData";
+import ControlPanel from "../controlPanel/ControlPanel";
 
 type ColumnType = "2:0" | "2:1" | "0:2" | "1:2" | "bookmaker" | "p1" | "p2";
 
@@ -26,7 +27,8 @@ export default function Table() {
       setWinData([]);
       setScoreData(generateScoreChances(length));
     }
-  }, [table]);
+    console.log(length);
+  }, [table, length]);
 
   function handleSorting(
     column: ColumnType,
@@ -75,23 +77,33 @@ export default function Table() {
   }
 
   return (
-    <div className={styles.tableWrapper}>
-      <table className={styles.main}>
-        {winData.length || scoreData.length ? (
-          <>
-            <TableHeader
-              columns={
-                Object.keys(
-                  (table === "Win Chances" ? winData : scoreData)[0]
-                ).slice(1) as ColumnType[]
-              }
-              handleSorting={handleSorting}
-              isScore={table === "Score Chances"}
-            />
-            <TableBody data={table === "Win Chances" ? winData : scoreData} />
-          </>
-        ) : null}
-      </table>
+    <div className={styles.main}>
+      <ControlPanel
+        length={length}
+        setLength={setLength}
+        table={table}
+        setTable={setTable}
+      />{" "}
+      {winData.length || scoreData.length ? (
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <>
+              <TableHeader
+                columns={
+                  (table === "Win Chances" ? winData : scoreData).length > 0
+                    ? (Object.keys(
+                        (table === "Win Chances" ? winData : scoreData)[0]
+                      ).slice(1) as ColumnType[])
+                    : []
+                }
+                handleSorting={handleSorting}
+                isScore={table === "Score Chances"}
+              />
+              <TableBody data={table === "Win Chances" ? winData : scoreData} />
+            </>
+          </table>
+        </div>
+      ) : null}
     </div>
   );
 }
